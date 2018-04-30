@@ -1,0 +1,11 @@
+<script>
+    $(document).ready(function() {
+      // plugin is applied to a scrollable element, targeting my navigation element
+      $('body').scrollspy({ 'target': '#myNavbar', 'offset': 10 });
+    
+      // listen for scrollspy events on the navigation element itself
+      $('#myNavbar').on('activate.bs.scrollspy', function() {
+        console.log('scroll!!')
+      });
+    });
+</script>
