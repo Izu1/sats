@@ -72,7 +72,33 @@
     <%= link_to 'Create New Meeting', new_meeting_path %> 
 
   </div>
-  </div>
   
-  </div>
+  
+
+  <div class="col-sm-12 index">
+    <h2>Uploads</h2>
+    <table class = "table">
+       <thead>.
+          <tr>
+             <th>Name</th>
+             <th>Download Link</th>
+             <th> </th>
+          </tr>
+       </thead>
+       
+       <tbody>
+          <% @upload.each do |upload| %>
+             
+             <tr>
+                <td><%= upload.name %></td>
+                <td><%= link_to "Download Attachement", upload.attachment_url %></td>
+                <td><%= button_to "Delete",  upload, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{upload.name}?" %></td>
+             </tr>
+             
+          <% end %>
+       </tbody>
+   </table>
+</div>
+</div>
+</div>
 </div>

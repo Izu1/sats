@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @sales = Sale.all
     @meetings = Meeting.all
+    @upload = Upload.all
   end
 
   # GET /users/new

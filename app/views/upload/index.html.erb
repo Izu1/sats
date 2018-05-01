@@ -1,0 +1,27 @@
+<h1>Attachment</h1>
+<%= link_to "Uploaded Attachements", new_upload_path, class: "btn btn-primary" %>
+<br />
+<br />
+
+<table class = "table">
+   <thead>.
+      <tr>
+         <th>Name</th>
+         <th>Download Link</th>
+         <th> </th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @upload.each do |upload| %>
+         
+         <tr>
+            <td><%= upload.name %></td>
+            <td><%= link_to "Download Attachement", upload.attachment_url %></td>
+            <td><%= button_to "Delete",  upload, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{upload.name}?" %></td>
+         </tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
