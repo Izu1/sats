@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180429210319) do
+ActiveRecord::Schema.define(version: 20180501095748) do
 
   create_table "meetings", force: :cascade do |t|
     t.text "title"
@@ -24,11 +24,10 @@ ActiveRecord::Schema.define(version: 20180429210319) do
   create_table "sales", force: :cascade do |t|
     t.text "title"
     t.text "content"
-    t.integer "transition_id"
+    t.text "status"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["transition_id"], name: "index_sales_on_transition_id"
   end
 
   create_table "transitions", force: :cascade do |t|
@@ -50,6 +49,7 @@ ActiveRecord::Schema.define(version: 20180429210319) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

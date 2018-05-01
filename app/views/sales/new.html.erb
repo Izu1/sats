@@ -1,5 +1,9 @@
-<h1>New Sale</h1>
-
-<%= render 'form', sale: @sale %>
-
-<%= link_to 'Back', sales_path %>
+<% provide(:title, 'New Sales') %>
+<% provide(:button_text, 'Create New Sales Item') %>
+<h1>New Sales</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+      <%= render 'form', sale: @sale %>
+      <%= link_to 'Back', sales_path %>
+  </div>
+</div>

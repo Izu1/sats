@@ -5,11 +5,15 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.paginate(page: params[:page])
+    @sales = Sale.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
+    @sales = Sale.all
+    @meetings = Meeting.all
   end
 
   # GET /users/new
@@ -28,7 +32,7 @@ class UsersController < ApplicationController
     if @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
+      redirect_to @user
     else
       render 'new'
     end
@@ -66,6 +70,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation)
     end
 end

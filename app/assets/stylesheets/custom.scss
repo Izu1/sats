@@ -71,7 +71,10 @@ p {
 
 
 /* header */
-
+header{
+  padding-left:20px;
+  padding-right:20px;
+}
 #logo {
   float: left;
   margin-right: 10px;
@@ -148,6 +151,18 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
+}
+
+.contain{
+  padding: 20px;
+}
+
+.index{
+  border:1px solid gray;
+  padding: 10px;
+  border-radius: 10px;
+  background:#F8F9F9;
+  margin:10px;
 }
 
 /* forms */

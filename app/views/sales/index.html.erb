@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
+<div class="index">
+  <h1>Sales</h1>
 
-<h1>Sales</h1>
-
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
       <th>Content</th>
-      <th>Transition</th>
+      <th>Status</th>
       <th>User</th>
       <th colspan="3"></th>
     </tr>
@@ -18,7 +18,7 @@
       <tr>
         <td><%= sale.title %></td>
         <td><%= sale.content %></td>
-        <td><%= sale.transition %></td>
+        <td><%= sale.status %></td>
         <td><%= sale.user_id %></td>
         <td><%= link_to 'Show', sale %></td>
         <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
@@ -31,3 +31,5 @@
 <br>
 
 <%= link_to 'New Sale', new_sale_path %>
+</div>
+

@@ -13,22 +13,23 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_area :title, id: :sale_title %>
+    <%= form.text_area :title, id: :sale_title, class: 'form-control' %>
+    
   </div>
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content, id: :sale_content %>
+    <%= form.text_area :content, id: :sale_content, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :transition_id %>
-    <%= form.text_field :transition_id, id: :sale_transition_id %>
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :sale_status, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :sale_user_id %>
+    <%= form.number_field :user_id, id: :sale_user_id , class: 'form-control'%>
   </div>
 
   <div class="actions">
