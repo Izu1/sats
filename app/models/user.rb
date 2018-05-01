@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :sales
+  has_many :sales
     has_many :meetings
     attr_accessor :remember_token, :activation_token, :reset_token
     
@@ -83,3 +83,4 @@ class User < ApplicationRecord
       end
 end
 
+ 

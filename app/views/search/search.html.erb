@@ -1,0 +1,10 @@
+<h1>Search</h1>
+
+<%= form_for @search, method: :get do |f| %>
+  <p>
+    <%= f.label "Search for" %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Go", name: nil %>
+  </p>
+<% end %>
+
