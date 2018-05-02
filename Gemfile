@@ -15,6 +15,7 @@ gem 'faker',          '1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'carrierwave'
+gem 'rails_admin', '~> 1.3'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

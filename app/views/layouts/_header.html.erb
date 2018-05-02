@@ -5,8 +5,20 @@
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", pages_about_path %></li>
         <li><%= link_to "FAQ", pages_faq_path %></li>
-        <% if logged_in? %>
+        <% if logged_in? && current_user.admin? %>
           <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Sales", sales_path %></li>
+          <li><%= link_to "Meetings", meetings_path %></li>
+          <li><%= link_to "Uploads", upload_index_path %></li>
+          <li><%= link_to "Profile", current_user %></li>
+          <li><%= link_to "Admin Console", rails_admin_path %></li>
+    	    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+    	    <li class="divider"></li>
+    	    <li>
+          		<%= link_to "Log out", logout_path, method: :delete %>
+    	    </li>
+          <% elsif logged_in? %>
+          li><%= link_to "Users", users_path %></li>
           <li><%= link_to "Sales", sales_path %></li>
           <li><%= link_to "Meetings", meetings_path %></li>
           <li><%= link_to "Uploads", upload_index_path %></li>
@@ -16,8 +28,7 @@
     	    <li>
           		<%= link_to "Log out", logout_path, method: :delete %>
     	    </li>
-          </li>
-        <% else %>
+          <% else %>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
       </ul>
